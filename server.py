@@ -100,7 +100,6 @@ def run_server(host, port):
                     line = line_queue.get()
                     axes, buttons = decode_joystick_input(line)
                     if axes or buttons:
-                        print("Sending")
                         broadcast_to_clients({"axes": axes, "buttons": buttons})
         except KeyboardInterrupt:
             print("🛑 Server shutting down...")
